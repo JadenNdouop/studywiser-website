@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surfaces */
+  --color-sw-surface: #f7f9fb;
+  --color-sw-surface-low: #f2f4f6;
+  --color-sw-surface-container: #eceef0;
+  --color-sw-surface-high: #e6e8ea;
+  --color-sw-card: #ffffff;
+  --color-sw-input-bg: #f1f5f9;
+  --color-sw-on-surface: #191c1e;
+  --color-sw-on-surface-variant: #414751;
+  --color-sw-muted: #717783;
+  --color-sw-outline: #c1c7d3;
+
+  /* Brand */
+  --color-sw-primary: #005da7;
+  --color-sw-primary-container: #2976c7;
+  --color-sw-on-primary: #ffffff;
+  --color-sw-primary-soft: #d4e3ff;
+
+  /* Candy accents */
+  --color-sw-mint: #96f4dd;
+  --color-sw-mint-soft: #dcf9f0;
+  --color-sw-on-mint: #007260;
+  --color-sw-coral: #ffdcc4;
+  --color-sw-coral-soft: #fde8d8;
+  --color-sw-on-coral: #8b4c11;
+  --color-sw-lavender: #ccdaff;
+  --color-sw-lavender-soft: #e3ebff;
+  --color-sw-on-lavender: #005da7;
+  --color-sw-yellow: #fff4c2;
+  --color-sw-on-yellow: #8a6d00;
+
+  /* Functional */
+  --color-sw-success: #006b5b;
+  --color-sw-on-success-soft: #007260;
+  --color-sw-error: #ba1a1a;
+  --color-sw-error-soft: #ffdad6;
+
+  --background: var(--color-sw-surface);
+  --foreground: var(--color-sw-on-surface);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-sw-surface: var(--color-sw-surface);
+  --color-sw-surface-low: var(--color-sw-surface-low);
+  --color-sw-surface-container: var(--color-sw-surface-container);
+  --color-sw-surface-high: var(--color-sw-surface-high);
+  --color-sw-card: var(--color-sw-card);
+  --color-sw-input-bg: var(--color-sw-input-bg);
+  --color-sw-on-surface: var(--color-sw-on-surface);
+  --color-sw-on-surface-variant: var(--color-sw-on-surface-variant);
+  --color-sw-muted: var(--color-sw-muted);
+  --color-sw-outline: var(--color-sw-outline);
+
+  --color-sw-primary: var(--color-sw-primary);
+  --color-sw-primary-container: var(--color-sw-primary-container);
+  --color-sw-on-primary: var(--color-sw-on-primary);
+  --color-sw-primary-soft: var(--color-sw-primary-soft);
+
+  --color-sw-mint: var(--color-sw-mint);
+  --color-sw-mint-soft: var(--color-sw-mint-soft);
+  --color-sw-on-mint: var(--color-sw-on-mint);
+  --color-sw-coral: var(--color-sw-coral);
+  --color-sw-coral-soft: var(--color-sw-coral-soft);
+  --color-sw-on-coral: var(--color-sw-on-coral);
+  --color-sw-lavender: var(--color-sw-lavender);
+  --color-sw-lavender-soft: var(--color-sw-lavender-soft);
+  --color-sw-on-lavender: var(--color-sw-on-lavender);
+  --color-sw-yellow: var(--color-sw-yellow);
+  --color-sw-on-yellow: var(--color-sw-on-yellow);
+
+  --color-sw-success: var(--color-sw-success);
+  --color-sw-on-success-soft: var(--color-sw-on-success-soft);
+  --color-sw-error: var(--color-sw-error);
+  --color-sw-error-soft: var(--color-sw-error-soft);
+
+  --font-sans: var(--font-lexend);
+
+  --radius-sw-sm: 8px;
+  --radius-sw-md: 16px;
+  --radius-sw-lg: 24px;
+  --radius-sw-xl: 32px;
+  --radius-sw-full: 999px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-sw-surface);
+  color: var(--color-sw-on-surface);
+  font-family: var(--font-lexend), system-ui, sans-serif;
+}
+
+/* Colored ambient shadow utilities — mirrors SW.shadow() from the app */
+.sw-shadow-primary {
+  box-shadow: 0 6px 24px -4px rgb(0 93 167 / 0.22);
+}
+.sw-shadow-mint {
+  box-shadow: 0 6px 24px -4px rgb(150 244 221 / 0.45);
+}
+.sw-shadow-coral {
+  box-shadow: 0 6px 24px -4px rgb(255 220 196 / 0.45);
+}
+.sw-shadow-lavender {
+  box-shadow: 0 6px 24px -4px rgb(204 218 255 / 0.45);
+}
+.sw-shadow-card {
+  box-shadow: 0 6px 24px -4px rgb(193 199 211 / 0.28);
 }
